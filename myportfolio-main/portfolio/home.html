@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="個人ポートフォリオ">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ポートフォリオ | 望月　孝太郎</title>
+    <link rel="stylesheet" media="all" href="css/style.css">
+    <!-- Font Awesome CDNを追加 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+    <script src="js/script.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* ベーススタイル */
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* サイドバー */
+        #sidebar {
+            background-color: #2C3E50;
+            color: white;
+            position: fixed;
+            width: 220px;
+            height: 100%;
+        }
+
+        #sidebar h1 {
+            text-align: center;
+            padding: 20px;
+        }
+
+        #mainnav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #mainnav ul li {
+            padding: 15px;
+            text-align: center;
+        }
+
+        #mainnav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+            display: block;
+        }
+
+        #mainnav ul li a:hover {
+            background-color: #34495E;
+            transition: 0.3s;
+        }
+
+        /* メインコンテンツ */
+        #content {
+            margin-left: 220px;
+            padding: 20px;
+        }
+
+        #mainImg img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        /* 各セクション */
+        section {
+            padding: 40px 0;
+            border-bottom: 1px solid #ddd;
+        }
+
+        h2 {
+            font-size: 28px;
+            color: #2C3E50;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .innerS {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .innerS p, .innerS ul {
+            margin-bottom: 20px;
+        }
+
+        .innerS img {
+            margin-bottom: 20px;
+            border-radius: 50%;
+        }
+
+        /* フッター */
+        #footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #2C3E50;
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        /* リンク */
+        a {
+            color: #2980B9;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+.profile {
+        text-align: center;
+    }
+    
+    .info-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 600px;
+        margin: 0 auto;
+        padding-top: 20px;
+    }
+
+    .info-item {
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        padding: 5px 0;
+    }
+
+    .info-item strong {
+        width: 120px;
+        text-align: left;
+    }
+
+    .info-item a {
+        color: #2980B9;
+        text-decoration: none;
+    }
+
+    .info-item a:hover {
+        text-decoration: underline;
+    }
+    .profile {
+        text-align: left;
+        margin-left:auto;
+        margin-right:auto;
+        max-width: width 800px;
+    }
+    
+    .info-container {
+        display: flex;
+        flex-direction: column;
+        margin-top: 20px;
+    }
+
+    .info-item {
+        display: flex;
+        padding: 10px 0;
+        justify-content:flex-start;
+    }
+
+
+    /* ラベル部分と内容を左揃え */
+    .info-item strong {
+        width: 120px; /* ラベル部分の幅を固定してそろえる */
+    }
+
+    .info-item a {
+        color: #2980B9;
+        text-decoration: none;
+    }
+
+    .info-item a:hover {
+        text-decoration: underline;
+    }
+    .qualifications li {
+        padding: 10px 0;
+        font-size: 1.1em;
+    }
+
+    .qualifications li i {
+        margin-right: 10px;
+        color: #2c3e50;
+    }
+    .qualifications {
+    list-style: none; /* 箇条書きのマークを消す */
+    padding-left: 0;  /* 左のインデントをなくす */
+}
+.current-projects {
+    list-style: none; /* 箇条書きを消す */
+    padding-left: 0;  /* 左側の余白をなくす */
+}
+
+.current-projects li {
+    margin-bottom: 15px; /* 項目間に余白を追加して見やすくする */
+    font-size: 16px; /* フォントサイズを少し大きくして読みやすくする */
+    line-height: 1.6; /* 行間の高さを調整して読み*/
+}
+.projects {
+    list-style: none;
+    padding: 0;
+}
+
+.projects li {
+    margin-bottom: 20px;
+    line-height: 1.5;
+    font-size: 1.1em;
+}
+
+.projects li strong a {
+    color: #2980B9;
+    text-decoration: none;
+}
+
+.projects li strong a:hover {
+    text-decoration: underline;
+}
+</style>
+    </style>
+</head>
+
+<body id="top">
+    <div id="wrapper">
+
+        <!-- サイドバー -->
+        <div id="sidebar">
+            <div id="sidebarWrap">
+                <!--<h1><img src="IMG_9975.jpeg" width="200" height="100" alt="logo"></h1>-->
+                <nav id="mainnav">
+                    <p id="menuWrap"><a id="menu"><span id="menuBtn"></span></a></p>
+                    <div class="panel">
+                        <ul>
+                            <li><a href="#top">TOP</a></li>
+                            <li><a href="#sec01">自己紹介</a></li>
+                            <li><a href="#sec02">研究内容と研究実績</a></li>
+                            <li><a href="#sec03">資格とスキル</a></li>
+                            <li><a href="#sec04">現在の取り組み</a></li>
+                            <li><a href="#sec05">趣味</a></li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+        <div id="content">
+            <!-- メイン画像 -->
+            <h1 style="text-align: center;">ポートフォリオ</h1>
+            <!-- 自己紹介セクション -->
+            <section id="sec01">
+                <header>
+                    <h2><span>自己紹介</span></h2>
+                </header>
+                <div class="innerS profile">
+                    <!--自己紹介メッセージ-->
+                    <p>こんにちは、望月孝太郎です。<br>
+                        茨城大学工学部機械システム工学科を卒業し、現在は茨城大学理工学研究科で情報工学を専攻しています。<br><br>
+                        私は、機械学習やデータ解析に強い関心を持っており、今後はこの分野で実用的なソリューションを提供できるエンジニアとして成長したいと考えています。<br><br>
+                        また、これらの技術を駆使し、企業のマーケティングに新たな価値を提案できる人材になりたいと考えています。
+                    </p>
+                </div>
+                <div class="innerS profile">
+                    <img src="Image/IMG_9975.jpeg" alt="プロフィール写真" style="width:20%;height:20%;">
+                    <div class="info-container">
+                        <div class="info-item">
+                            <strong>名前: </strong>望月孝太郎
+                        </div>
+                        <div class="info-item">
+                            <strong>大学: </strong>茨城大学工学部機械システム工学科
+                        </div>
+                        <div class="info-item">
+                            <strong>大学院: </strong>茨城大学院理工学研究科情報工学専攻1年
+                        </div>
+                        <div class="info-item">
+                            <strong>出身地: </strong> 静岡県御殿場市
+                        </div>
+                        <div class="info-item">
+                            <strong>e-mail: </strong>kotaro.mochizuki.26@gmail.com
+                        </div>
+                        <div class="info-item">
+                            <strong>Tel: </strong> 090-9901-8228</p>
+                        </div>
+                </div>
+            </section>
+
+
+            <!-- 研究実績セクション -->
+            <section id="sec02">
+                <header>
+                    <h2><span>研究実績と研究内容</span></h2>
+                </header>
+                <div class="innerS">
+                    <p>``企業財務状況の機械学習による自社株買い銘柄の予測可能性''<br>
+                        日本機械学会茨城講演会で2024年8月に発表
+                    </p>
+                    <p><a href="https://www.jsme.or.jp/conference/ibarakiconf24/doc/program.pdf">プログラムはこちら</a></p>
+                    <!--<p><a href="茨城講演会_望月孝太郎_20240830.pdf">スライドはこちら</a></p>-->
+                    <!-- PDFスライドを埋め込む -->
+                    <div class="pdf-container">
+                        <iframe src="茨城講演会_望月孝太郎_20240830.pdf" width="1000" height="600"></iframe>
+                    </div>
+
+                    <!-- 右クリックの無効化 -->
+                    <script>
+                        document.addEventListener('contextmenu', function(e) {
+                            e.preventDefault();
+                        });
+                    </script>
+
+                    <!-- メッセージを表示する -->
+                    <p>スライドは上記にてご覧ください（ダウンロードは無効化されています）。</p>
+
+                    <p>``企業財務状況の機械学習による増配銘柄の予測可能性''<br>
+                        日本機械学会茨城講演会で2024年8月に共同著者を務める
+                    </p>
+                    <p><a href="https://www.jsme.or.jp/conference/ibarakiconf24/doc/program.pdf">プログラムはこちら</a></p>
+                    <!--<p><a href="茨城講演会_望月孝太郎_20240830.pdf">スライドはこちら</a></p>-->
+                    <!-- PDFスライドを埋め込む -->
+                    <div class="pdf-container">
+                        <iframe src="茨城講演会_田村_20240830.pdf" width="1000" height="600"></iframe>
+                    </div>
+
+                    <!-- 右クリックの無効化 -->
+                    <script>
+                        document.addEventListener('contextmenu', function(e) {
+                            e.preventDefault();
+                        });
+                    </script>
+
+                    <!-- メッセージを表示する -->
+                    <p>スライドは上記にてご覧ください（ダウンロードは無効化されています）。</p>
+                </div>
+            </section>
+
+            <!-- 資格セクション -->
+            <section id="sec03">
+                <header>
+                    <h2><span>資格とスキル</span></h2>
+                </header>
+                <div class="innerS">
+                    <ul class="qualifications">
+                        <li><i class="fas fa-car"></i> 普通自動車第一種免許</li>
+                        <li><i class="fas fa-laptop-code"></i> 基本情報技術者試験</li>
+                    </ul>
+                    
+                    <h3>スキル</h3>
+                    <ul class="qualifications">
+                        <li><i class="fas fa-laptop-code"></i> Python : 研究で2年使用</li>
+                        <li><i class="fas fa-database"></i> SQL : 2週間のインターンをきっかけに覚え、現在勉強中</li>
+                        <li><i class="fas fa-code"></i> HTMLとJavaScript : 自分のWebサイトを作りたいと思い、現在勉強中</li>
+                    </ul>
+                </div>
+            </section>
+            <!-- 現在の取り組みセクション -->
+            <section id="sec04">
+                <header>
+                    <h2><span>現在の取り組み</span></h2>
+                </header>
+                <div class="innerS">
+                    <ul class="current-projects">
+                        <li><i class="fas fa-chart-line"></i> 自社株買いや増配の予測モデルの改良や応用の検証</li>
+                        <li><i class="fas fa-book"></i> 応用情報技術者試験と統計検定2級の勉強</li>
+                        <li><i class="fas fa-briefcase"></i> 長期インターンで初回キャッシング利用者のスコアリングモデルの開発に取り組む。<br>またモデルを活用したマーケティング戦略をプレゼンテーションする</li>
+                    </ul>
+                </div>
+                
+            </section>
+            <!-- 製作物セクション -->
+            <section id="sec06">
+                <header>
+                    <h2><span>製作物</span></h2>
+                </header>
+                <div class="innerS">
+                    <ul class="projects">
+                        <li>
+                            <i class="fas fa-globe"></i> 
+                            <strong><a href="https://mochizukikotaro0621.github.io/physics-simulation-app/%E7%89%A9%E7%90%86%E5%AD%A6%E7%BF%92%E6%94%AF%E6%8F%B4%E3%82%B7%E3%82%B9%E3%83%86%E3%83%A0%E5%88%B6%E4%BD%9C%E7%89%A9/home/physics-home.html" target="_blank">プロジェクト1: 高校物理の時間</a></strong>
+                            <p>物理学習支援システムを製作しました</p>
+                        </li>
+                        <li>
+                            <i class="fas fa-globe"></i> 
+                            <strong><a href="https://1or1-k.github.io/ICT/home.html" target="_blank">プロジェクト2: Taxsea(税金について学べるアプリ)</a></strong>
+                            <p>税金について学べるwebアプリを製作しました</p>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+            <!-- 趣味セクション -->
+            <section id="sec05">
+                <header>
+                    <h2><span>趣味</span></h2>
+                </header>
+                <div class="innerS hobbies">
+                    <!-- バスケットボール -->
+                    <div class="hobby-item">
+                        <h3>バスケットボール</h3>
+                        <p>学生時代から続けています。現在はサークルや社会人チームに参加しています。<br>もちろん観戦も好きです。</p>
+
+                        <!-- Splideによる画像スライダー -->
+                        <section id="image-carousel" class="splide" aria-label="バスケットボールの写真や動画">
+                            <div class="splide__track">
+                                <ul class="splide__list">
+                                    <li class="splide__slide">
+                                        <img src="Image/basketball1.jpg" alt="バスケットボールの試合中の写真1">
+                                    </li>
+                                    <li class="splide__slide">
+                                        <img src="Image/basketball2.jpg" alt="バスケットボールの試合中の写真2">
+                                    </li>
+                                    <li class="splide__slide">
+                                        <video controls>
+                                            <source src="Image/basketball3.MOV" type="video/mp4">
+                                            お使いのブラウザはvideoタグに対応していません。
+                                        </video>
+                                    </li>
+                                </ul>
+                            </div>
+                        </section>
+                    </div>
+                </div>
+            </section>
+
+                <!-- SplideのCSSとJSを追加 -->
+                <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide/dist/css/splide.min.css">
+                <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide/dist/js/splide.min.js"></script>
+
+
+                <!-- SlickのCSSとJSを追加 -->
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css" />
+                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css" />
+                <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+
+                <style>
+                    .hobby-item {
+                        text-align: center;
+                    }
+                    .splide__slide img,
+                    .splide__slide video {
+                        max-width: 60%; /* 画像を100%の幅で表示 */
+                        max-height: 60%; /* 高さを自動調整 */
+                        height: auto;
+                        width:auto;
+                        border-radius:20px;
+                        margin: 0 auto; /* 画像の角を丸める */
+                    }
+                    .slick-prev,
+                    .slick-next {
+                        color: gray; /* 矢印の色をグレーに設定 */
+                    }
+
+                    .slick-prev:hover,
+                    .slick-next:hover {
+                        color: darkgray; /* ホバー時の色を少し濃いグレーに設定 */
+                    }
+                    .splide__track {
+                        margin-top: 50px;
+                    }
+                    .splide__pagination {
+                        position: absolute; /* absoluteに変更して位置を自由に設定 */
+                        bottom: 50px; /* 画像との距離を設定。値を小さくすると画像に近づく */
+                        left: 50%; /* 中央揃えのためにleftを50%に設定 */
+                        transform: translateX(-50%); /* 中央揃え */
+                        text-align: center;
+                    }
+
+                    .splide__pagination__page {
+                        background-color: gray; /* ドットの色をグレーに変更 */
+                        width: 12px; /* ドットの幅 */
+                        height: 12px; /* ドットの高さ */
+                        border-radius: 50%; /* 丸くする */
+                        margin: 0 5px; /* ドットの間隔 */
+                    }
+
+                    .splide__pagination__page.is-active {
+                        background-color: black; /* 選択されているドットの色を変更 */
+                    }
+                    </style>
+
+                    <!-- SlickのJS -->
+                    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+                    <script>
+                    // DOMの要素がロードされた後にSplideを初期化
+                    document.addEventListener('DOMContentLoaded', function () {
+                        new Splide('#image-carousel', {
+                            type: 'loop', // 無限スライド
+                            perPage: 1,   // 一度に表示するスライド数
+                            perMove: 1,   // スクロールするスライド数
+                            pagination: true, // ドットナビゲーションを表示
+                            arrows: true  // 矢印を表示
+                        }).mount();
+                    });
+                    </script>
+
+                    
+
+                </div>
+            </section>
+
+            <!-- フッター -->
+            <footer id="footer">
+                Copyright(c) 2024 望月孝太郎. All Rights Reserved.
+            </footer>
+        </div>
+    </div>
+</body>
+</html>
